@@ -355,7 +355,7 @@ function getTreeselect() {
     ${businessName}Options.value.push(data);
   });
 }
-	
+
 // 取消按钮
 function cancel() {
   open.value = false;
@@ -463,7 +463,7 @@ function submitForm() {
 /** 删除按钮操作 */
 function handleDelete(row) {
   proxy.#[[$modal]]#.confirm('是否确认删除${functionName}编号为"' + row.${pkColumn.javaField} + '"的数据项？').then(function() {
-    return del${BusinessName}(row.${pkColumn.javaField});
+    return del${BusinessName}(row.${pkColumn.javaField})
   }).then(() => {
     getList();
     proxy.#[[$modal]]#.msgSuccess("删除成功");

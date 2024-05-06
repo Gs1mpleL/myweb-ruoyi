@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * spring工具类 方便在非spring管理环境中获取bean
- * 
+ *
  * @author ruoyi
  */
 @Component
@@ -48,7 +48,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
      */
     public static <T> T getBean(Class<T> clz) throws BeansException
     {
-        T result = (T) beanFactory.getBean(clz);
+        T result = beanFactory.getBean(clz);
         return result;
     }
 
@@ -102,7 +102,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor
 
     /**
      * 获取aop代理对象
-     * 
+     *
      * @param invoker
      * @return
      */

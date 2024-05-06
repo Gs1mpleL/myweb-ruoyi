@@ -12,7 +12,7 @@ import com.ruoyi.system.api.domain.SysUser;
 
 /**
  * 登录密码方法
- * 
+ *
  * @author ruoyi
  */
 @Component
@@ -21,16 +21,16 @@ public class SysPasswordService
     @Autowired
     private RedisService redisService;
 
-    private int maxRetryCount = CacheConstants.PASSWORD_MAX_RETRY_COUNT;
+    private final int maxRetryCount = CacheConstants.PASSWORD_MAX_RETRY_COUNT;
 
-    private Long lockTime = CacheConstants.PASSWORD_LOCK_TIME;
+    private final Long lockTime = CacheConstants.PASSWORD_LOCK_TIME;
 
     @Autowired
     private SysRecordLogService recordLogService;
 
     /**
      * 登录账户密码错误次数缓存键名
-     * 
+     *
      * @param username 用户名
      * @return 缓存键key
      */

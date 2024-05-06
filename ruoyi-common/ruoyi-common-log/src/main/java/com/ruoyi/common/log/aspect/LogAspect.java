@@ -31,7 +31,7 @@ import com.ruoyi.system.api.domain.SysOperLog;
 
 /**
  * 操作日志记录处理
- * 
+ *
  * @author ruoyi
  */
 @Aspect
@@ -71,7 +71,7 @@ public class LogAspect
 
     /**
      * 拦截异常操作
-     * 
+     *
      * @param joinPoint 切点
      * @param e 异常
      */
@@ -130,7 +130,7 @@ public class LogAspect
 
     /**
      * 获取注解中对方法的描述信息 用于Controller层注解
-     * 
+     *
      * @param log 日志
      * @param operLog 操作日志
      * @throws Exception
@@ -158,7 +158,7 @@ public class LogAspect
 
     /**
      * 获取请求的参数，放到log中
-     * 
+     *
      * @param operLog 操作日志
      * @throws Exception 异常
      */
@@ -184,7 +184,7 @@ public class LogAspect
     private String argsArrayToString(Object[] paramsArray, String[] excludeParamNames)
     {
         String params = "";
-        if (paramsArray != null && paramsArray.length > 0)
+        if (paramsArray != null)
         {
             for (Object o : paramsArray)
             {
@@ -193,7 +193,7 @@ public class LogAspect
                     try
                     {
                         String jsonObj = JSON.toJSONString(o, excludePropertyPreFilter(excludeParamNames));
-                        params += jsonObj.toString() + " ";
+                        params += jsonObj + " ";
                     }
                     catch (Exception e)
                     {
@@ -214,7 +214,7 @@ public class LogAspect
 
     /**
      * 判断是否需要过滤的对象。
-     * 
+     *
      * @param o 对象信息。
      * @return 如果是需要过滤的对象，则返回true；否则返回false。
      */

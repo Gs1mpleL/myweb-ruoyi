@@ -12,7 +12,7 @@ import com.ruoyi.system.api.factory.RemoteFileFallbackFactory;
 
 /**
  * 文件服务
- * 
+ *
  * @author ruoyi
  */
 @FeignClient(contextId = "remoteFileService", value = ServiceNameConstants.FILE_SERVICE, fallbackFactory = RemoteFileFallbackFactory.class)
@@ -25,5 +25,5 @@ public interface RemoteFileService
      * @return 结果
      */
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    public R<SysFile> upload(@RequestPart(value = "file") MultipartFile file);
+    R<SysFile> upload(@RequestPart(value = "file") MultipartFile file);
 }

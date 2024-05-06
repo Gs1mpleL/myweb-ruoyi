@@ -7,7 +7,7 @@ import com.ruoyi.common.core.web.domain.BaseEntity;
 
 /**
  * 代码生成业务字段表 gen_table_column
- * 
+ *
  * @author ruoyi
  */
 public class GenTableColumn extends BaseEntity
@@ -361,7 +361,7 @@ public class GenTableColumn extends BaseEntity
                 {
                     Object startStr = value.subSequence(0, 1);
                     String endStr = value.substring(1);
-                    sb.append("").append(startStr).append("=").append(endStr).append(",");
+                    sb.append(startStr).append("=").append(endStr).append(",");
                 }
             }
             return sb.deleteCharAt(sb.length() - 1).toString();

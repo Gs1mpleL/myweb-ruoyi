@@ -10,7 +10,7 @@ import com.ruoyi.common.core.utils.ServletUtils;
 
 /**
  * 黑名单过滤器
- * 
+ *
  * @author ruoyi
  */
 @Component
@@ -40,7 +40,7 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
     {
         private List<String> blacklistUrl;
 
-        private List<Pattern> blacklistUrlPattern = new ArrayList<>();
+        private final List<Pattern> blacklistUrlPattern = new ArrayList<>();
 
         public boolean matchBlacklist(String url)
         {
