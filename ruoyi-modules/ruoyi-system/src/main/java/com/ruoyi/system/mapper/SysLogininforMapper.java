@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.api.domain.SysLogininfor;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.api.domain.SysLogininfor;
  *
  * @author ruoyi
  */
-public interface SysLogininforMapper
-{
+public interface SysLogininforMapper {
     /**
      * 新增系统登录日志
      *

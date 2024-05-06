@@ -9,7 +9,7 @@ export function login(username, password, code, uuid) {
       repeatSubmit: false
     },
     method: 'post',
-    data: { username, password, code, uuid }
+    data: {username, password, code, uuid}
   })
 }
 

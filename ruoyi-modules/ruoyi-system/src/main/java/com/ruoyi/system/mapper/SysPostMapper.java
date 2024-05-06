@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.domain.SysPost;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.domain.SysPost;
  *
  * @author ruoyi
  */
-public interface SysPostMapper
-{
+public interface SysPostMapper {
     /**
      * 查询岗位数据集合
      *

@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.api.domain.SysRole;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.api.domain.SysRole;
  *
  * @author ruoyi
  */
-public interface SysRoleMapper
-{
+public interface SysRoleMapper {
     /**
      * 根据条件分页查询角色数据
      *

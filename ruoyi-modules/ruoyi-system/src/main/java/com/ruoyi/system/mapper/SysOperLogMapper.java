@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.api.domain.SysOperLog;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.api.domain.SysOperLog;
  *
  * @author ruoyi
  */
-public interface SysOperLogMapper
-{
+public interface SysOperLogMapper {
     /**
      * 新增操作日志
      *

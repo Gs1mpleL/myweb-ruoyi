@@ -1,15 +1,15 @@
 package com.ruoyi.system.service;
 
-import java.util.List;
 import com.ruoyi.system.api.domain.SysOperLog;
+
+import java.util.List;
 
 /**
  * 操作日志 服务层
  *
  * @author ruoyi
  */
-public interface ISysOperLogService
-{
+public interface ISysOperLogService {
     /**
      * 新增操作日志
      *

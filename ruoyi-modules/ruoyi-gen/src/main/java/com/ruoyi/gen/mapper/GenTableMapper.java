@@ -1,15 +1,15 @@
 package com.ruoyi.gen.mapper;
 
-import java.util.List;
 import com.ruoyi.gen.domain.GenTable;
+
+import java.util.List;
 
 /**
  * 业务 数据层
  *
  * @author ruoyi
  */
-public interface GenTableMapper
-{
+public interface GenTableMapper {
     /**
      * 查询业务列表
      *

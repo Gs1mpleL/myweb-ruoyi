@@ -1,15 +1,15 @@
 package com.ruoyi.system.service;
 
-import java.util.List;
 import com.ruoyi.system.api.domain.SysDictData;
+
+import java.util.List;
 
 /**
  * 字典 业务层
  *
  * @author ruoyi
  */
-public interface ISysDictDataService
-{
+public interface ISysDictDataService {
     /**
      * 根据条件分页查询字典数据
      *
@@ -21,7 +21,7 @@ public interface ISysDictDataService
     /**
      * 根据字典类型和字典键值查询字典数据信息
      *
-     * @param dictType 字典类型
+     * @param dictType  字典类型
      * @param dictValue 字典键值
      * @return 字典标签
      */

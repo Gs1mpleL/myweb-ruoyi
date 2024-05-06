@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.domain.SysUserPost;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.domain.SysUserPost;
  *
  * @author ruoyi
  */
-public interface SysUserPostMapper
-{
+public interface SysUserPostMapper {
     /**
      * 通过用户ID删除用户和岗位关联
      *

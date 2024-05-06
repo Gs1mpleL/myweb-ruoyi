@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.domain.SysRoleMenu;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.domain.SysRoleMenu;
  *
  * @author ruoyi
  */
-public interface SysRoleMenuMapper
-{
+public interface SysRoleMenuMapper {
     /**
      * 查询菜单使用数量
      *

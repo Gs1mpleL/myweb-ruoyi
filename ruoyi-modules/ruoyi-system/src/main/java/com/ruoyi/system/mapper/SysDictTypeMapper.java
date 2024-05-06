@@ -1,6 +1,7 @@
 package com.ruoyi.system.mapper;
 
 import java.util.List;
+
 import com.ruoyi.system.api.domain.SysDictType;
 
 /**
@@ -8,8 +9,7 @@ import com.ruoyi.system.api.domain.SysDictType;
  *
  * @author ruoyi
  */
-public interface SysDictTypeMapper
-{
+public interface SysDictTypeMapper {
     /**
      * 根据条件分页查询字典类型
      *

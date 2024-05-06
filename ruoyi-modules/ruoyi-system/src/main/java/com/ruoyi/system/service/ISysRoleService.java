@@ -1,17 +1,17 @@
 package com.ruoyi.system.service;
 
-import java.util.List;
-import java.util.Set;
 import com.ruoyi.system.api.domain.SysRole;
 import com.ruoyi.system.domain.SysUserRole;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * 角色业务层
  *
  * @author ruoyi
  */
-public interface ISysRoleService
-{
+public interface ISysRoleService {
     /**
      * 根据条件分页查询角色数据
      *
@@ -156,7 +156,7 @@ public interface ISysRoleService
     /**
      * 批量取消授权用户角色
      *
-     * @param roleId 角色ID
+     * @param roleId  角色ID
      * @param userIds 需要取消授权的用户数据ID
      * @return 结果
      */
@@ -165,7 +165,7 @@ public interface ISysRoleService
     /**
      * 批量选择授权用户角色
      *
-     * @param roleId 角色ID
+     * @param roleId  角色ID
      * @param userIds 需要删除的用户数据ID
      * @return 结果
      */
