@@ -14,8 +14,8 @@ import lombok.Data;
 @TableName("crawler_bili_data")
 public class BiliDataEntity {
     @TableId(value = "id", type = IdType.AUTO)
-    private int id;
-    private String userId;
+    private Long id;
+    private Long userId;
     private String cookie;
     private String refreshCookie;
 
