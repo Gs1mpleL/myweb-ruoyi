@@ -37,12 +37,11 @@
         <poi.version>4.1.2</poi.version>
         <transmittable-thread-local.version>2.14.4</transmittable-thread-local.version>
         <lombok.version>1.18.30</lombok.version>
-        <mp.version>3.3.1</mp.version>
+        <mp.version>3.5.1</mp.version>
     </properties>
 
     <!-- 依赖声明 -->
     <dependencyManagement>
-
         <dependencies>
             <!--mp-->
             <dependency>
