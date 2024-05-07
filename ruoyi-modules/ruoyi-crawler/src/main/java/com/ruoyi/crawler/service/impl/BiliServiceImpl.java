@@ -4,9 +4,11 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ruoyi.common.core.exception.GlobalException;
+
 import com.ruoyi.common.core.utils.RequestsUtils;
 import com.ruoyi.common.core.utils.StringUtils;
-import com.ruoyi.common.core.utils.ThreadLocalUtils;
+
+import com.ruoyi.common.security.utils.SecurityUtils;
 import com.ruoyi.crawler.domain.BiliDataEntity;
 import com.ruoyi.crawler.mapper.BiliDataMapper;
 import com.ruoyi.crawler.service.BiliService;
@@ -82,8 +84,7 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
     }
 
     private BiliDataEntity getBiliDataEntityByCurUser() {
-        String userId = ThreadLocalUtils.get("userId", String.class);
-        return this.lambdaQuery().eq(BiliDataEntity::getUserId, userId).last("limit 1").one();
+        return this.lambdaQuery().eq(BiliDataEntity::getUserId, SecurityUtils.getUserId()).last("limit 1").one();
     }
 
     @Override
@@ -162,8 +163,8 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
         BiliDataEntity insertOrUpdateUserEntity = new BiliDataEntity();
         insertOrUpdateUserEntity.setCookie(totalCookie);
         insertOrUpdateUserEntity.setRefreshCookie(refreshToken);
-        insertOrUpdateUserEntity.setUserId(ThreadLocalUtils.get("userId", String.class));
-        BiliDataEntity fromDB = this.lambdaQuery().eq(BiliDataEntity::getUserId, ThreadLocalUtils.get("userId", String.class)).one();
+        insertOrUpdateUserEntity.setUserId(SecurityUtils.getUserId());
+        BiliDataEntity fromDB = this.lambdaQuery().eq(BiliDataEntity::getUserId, SecurityUtils.getUserId()).one();
         if (fromDB == null) {
             this.save(insertOrUpdateUserEntity);
         } else {
