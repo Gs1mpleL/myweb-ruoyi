@@ -29,7 +29,7 @@ export default {
     })
   },
   destroyed() {
-    this.startInterval()
+    this.stopInterval()
   },
   methods: {
     generateQRCode() {
