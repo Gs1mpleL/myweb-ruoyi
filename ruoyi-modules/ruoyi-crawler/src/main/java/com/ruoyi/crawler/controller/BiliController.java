@@ -2,7 +2,7 @@ package com.ruoyi.crawler.controller;
 
 import com.ruoyi.common.core.domain.R;
 import com.ruoyi.crawler.service.BiliService;
-import com.ruoyi.crawler.vo.BiliUserDataVo;
+import com.ruoyi.crawler.domain.vo.BiliUserDataVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

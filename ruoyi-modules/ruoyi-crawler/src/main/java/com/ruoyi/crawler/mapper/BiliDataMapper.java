@@ -2,7 +2,7 @@ package com.ruoyi.crawler.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.ruoyi.crawler.domain.BiliDataEntity;
+import com.ruoyi.crawler.domain.entity.BiliDataEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

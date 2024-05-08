@@ -9,12 +9,12 @@ import com.ruoyi.common.core.utils.RequestsUtils;
 import com.ruoyi.common.core.utils.StringUtils;
 
 import com.ruoyi.common.security.utils.SecurityUtils;
-import com.ruoyi.crawler.domain.BiliDataEntity;
+import com.ruoyi.crawler.domain.entity.BiliDataEntity;
 import com.ruoyi.crawler.mapper.BiliDataMapper;
 import com.ruoyi.crawler.service.BiliService;
 import com.ruoyi.crawler.utils.RSAKotlinUtils;
-import com.ruoyi.crawler.vo.BiliUserDataVo;
-import com.ruoyi.crawler.vo.QRVo;
+import com.ruoyi.crawler.domain.vo.BiliUserDataVo;
+import com.ruoyi.crawler.domain.vo.QRVo;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
