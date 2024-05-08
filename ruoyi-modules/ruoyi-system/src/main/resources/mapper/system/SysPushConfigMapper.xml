@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysPushConfigMapper">
+
+    <resultMap type="SysPushConfig" id="SysPushConfigResult">
+            <result property="id" column="id"/>
+            <result property="type" column="type"/>
+            <result property="baseUrl" column="baseUrl"/>
+            <result property="otherNeed" column="other_need"/>
+    </resultMap>
+
+    <sql id="selectSysPushConfigVo">
+        select id, type, baseUrl, other_need
+        from sys_push_config
+    </sql>
+
+    <select id="selectSysPushConfigList" parameterType="SysPushConfig" resultMap="SysPushConfigResult">
+        <include refid="selectSysPushConfigVo"/>
+        <where>
+                        <if test="type != null  and type != ''">
+                            and type = #{type}
+                        </if>
+                        <if test="baseUrl != null  and baseUrl != ''">
+                            and baseUrl = #{baseUrl}
+                        </if>
+                        <if test="otherNeed != null  and otherNeed != ''">
+                            and other_need = #{otherNeed}
+                        </if>
+        </where>
+    </select>
+
+    <select id="selectSysPushConfigById" parameterType="Long"
+            resultMap="SysPushConfigResult">
+            <include refid="selectSysPushConfigVo"/>
+            where id = #{id}
+    </select>
+
+    <insert id="insertSysPushConfig" parameterType="SysPushConfig" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into sys_push_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                    <if test="type != null">type,
+                    </if>
+                    <if test="baseUrl != null">baseUrl,
+                    </if>
+                    <if test="otherNeed != null">other_need,
+                    </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+                    <if test="type != null">#{type},
+                    </if>
+                    <if test="baseUrl != null">#{baseUrl},
+                    </if>
+                    <if test="otherNeed != null">#{otherNeed},
+                    </if>
+        </trim>
+    </insert>
+
+    <update id="updateSysPushConfig" parameterType="SysPushConfig">
+        update sys_push_config
+        <trim prefix="SET" suffixOverrides=",">
+                    <if test="type != null">type =
+                        #{type},
+                    </if>
+                    <if test="baseUrl != null">baseUrl =
+                        #{baseUrl},
+                    </if>
+                    <if test="otherNeed != null">other_need =
+                        #{otherNeed},
+                    </if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysPushConfigById" parameterType="Long">
+        delete
+        from sys_push_config where id = #{id}
+    </delete>
+
+    <delete id="deleteSysPushConfigByIds" parameterType="String">
+        delete from sys_push_config where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
