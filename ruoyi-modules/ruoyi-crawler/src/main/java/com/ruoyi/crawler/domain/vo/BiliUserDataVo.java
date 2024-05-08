@@ -1,8 +1,8 @@
-package com.ruoyi.crawler.vo;
+package com.ruoyi.crawler.domain.vo;
 
 
 import com.ruoyi.common.core.exception.GlobalException;
-import com.ruoyi.crawler.domain.BiliDataEntity;
+import com.ruoyi.crawler.domain.entity.BiliDataEntity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

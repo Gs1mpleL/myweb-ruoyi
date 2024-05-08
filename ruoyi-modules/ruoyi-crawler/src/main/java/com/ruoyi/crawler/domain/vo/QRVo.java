@@ -1,4 +1,4 @@
-package com.ruoyi.crawler.vo;
+package com.ruoyi.crawler.domain.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
