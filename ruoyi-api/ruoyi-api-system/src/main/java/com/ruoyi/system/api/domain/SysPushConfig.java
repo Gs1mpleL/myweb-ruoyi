@@ -1,4 +1,4 @@
-package com.ruoyi.system.domain;
+package com.ruoyi.system.api.domain;
 
 import lombok.Data;
 import org.apache.commons.lang3.builder.ToStringBuilder;

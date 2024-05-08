@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.ruoyi.system.mapper.SysPushConfigMapper;
-import com.ruoyi.system.domain.SysPushConfig;
+import com.ruoyi.system.api.domain.SysPushConfig;
 import com.ruoyi.system.service.ISysPushConfigService;
 
 /**
@@ -82,5 +82,12 @@ public class SysPushConfigServiceImpl implements ISysPushConfigService {
     @Override
     public int deleteSysPushConfigById(Long id) {
         return sysPushConfigMapper.deleteSysPushConfigById(id);
+    }
+
+    @Override
+    public SysPushConfig getByType(String type) {
+        SysPushConfig sysPushConfig = new SysPushConfig();
+        sysPushConfig.setType(type);
+        return sysPushConfigMapper.selectSysPushConfigList(sysPushConfig).get(0);
     }
 }

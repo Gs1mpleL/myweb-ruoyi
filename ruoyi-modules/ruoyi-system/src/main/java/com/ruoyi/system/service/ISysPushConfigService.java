@@ -1,16 +1,16 @@
-package com.ruoyi.system.mapper;
+package com.ruoyi.system.service;
 
 import java.util.List;
 
 import com.ruoyi.system.api.domain.SysPushConfig;
 
 /**
- * 推送服务Mapper接口
+ * 推送服务Service接口
  *
  * @author ruoyi
  * @date 2024-05-08
  */
-public interface SysPushConfigMapper {
+public interface ISysPushConfigService {
     /**
      * 查询推送服务
      *
@@ -44,18 +44,20 @@ public interface SysPushConfigMapper {
     int updateSysPushConfig(SysPushConfig sysPushConfig);
 
     /**
-     * 删除推送服务
+     * 批量删除推送服务
+     *
+     * @param ids 需要删除的推送服务主键集合
+     * @return 结果
+     */
+    int deleteSysPushConfigByIds(Long[] ids);
+
+    /**
+     * 删除推送服务信息
      *
      * @param id 推送服务主键
      * @return 结果
      */
     int deleteSysPushConfigById(Long id);
 
-    /**
-     * 批量删除推送服务
-     *
-     * @param ids 需要删除的数据主键集合
-     * @return 结果
-     */
-    int deleteSysPushConfigByIds(Long[] ids);
+    SysPushConfig getByType(String type);
 }

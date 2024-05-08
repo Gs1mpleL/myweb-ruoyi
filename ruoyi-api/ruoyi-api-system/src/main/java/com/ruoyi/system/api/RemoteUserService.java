@@ -3,6 +3,7 @@ package com.ruoyi.system.api;
 import com.ruoyi.common.core.constant.SecurityConstants;
 import com.ruoyi.common.core.constant.ServiceNameConstants;
 import com.ruoyi.common.core.domain.R;
+import com.ruoyi.system.api.domain.SysPushConfig;
 import com.ruoyi.system.api.domain.SysUser;
 import com.ruoyi.system.api.factory.RemoteUserFallbackFactory;
 import com.ruoyi.system.api.model.LoginUser;
@@ -35,4 +36,8 @@ public interface RemoteUserService {
      */
     @PostMapping("/user/register")
     R<Boolean> registerUserInfo(@RequestBody SysUser sysUser, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
+
+    @GetMapping("/pushConfig/getByType/{type}")
+    R<SysPushConfig> getPushConfigByType(@PathVariable("type") String type, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 }
