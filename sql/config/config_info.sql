@@ -55,7 +55,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: ''*''
+        include: \'*\'
 ', '58dde4e3760499d3bac2d77a3a1e9018', '2020-05-20 12:00:00', '2023-12-04 08:08:23', 'nacos', '0:0:0:0:0:0:0:1', '', '', '通用配置', 'null', 'null', 'yaml', '', '');
 INSERT INTO `ry-config`.config_info (id, data_id, group_id, content, md5, gmt_create, gmt_modified, src_user, src_ip, app_name, tenant_id, c_desc, c_use, effect, type, c_schema, encrypted_data_key) VALUES (2, 'ruoyi-gateway-dev.yml', 'DEFAULT_GROUP', 'spring:
   redis:

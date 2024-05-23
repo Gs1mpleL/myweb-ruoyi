@@ -1,6 +1,6 @@
-package com.ruoyi.crawler.config;
+package com.ruoyi.common.core.config;
 
-import com.ruoyi.common.core.utils.RequestsUtils;
+import com.ruoyi.common.core.utils.RequestUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
@@ -13,10 +13,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Configuration
-public class RequestsUtilsConfig {
+public class RequestUtilsConfig {
     @Bean
-    public RequestsUtils getRequestsUtils() {
-        return new RequestsUtils();
+    public RequestUtils getRequestsUtils() {
+        return new RequestUtils();
     }
 
     @Bean

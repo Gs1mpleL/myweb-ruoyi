@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.ruoyi.common.core.exception.GlobalException;
 
-import com.ruoyi.common.core.utils.RequestsUtils;
+import com.ruoyi.common.core.utils.RequestUtils;
 import com.ruoyi.common.core.utils.StringUtils;
 
 import com.ruoyi.common.security.utils.SecurityUtils;
@@ -29,7 +29,7 @@ import java.util.HashMap;
 @Slf4j
 public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity> implements BiliService {
     @Autowired
-    private RequestsUtils requestsUtils;
+    private RequestUtils requestUtils;
 
     private static String getRefreshCsrf(String html) {
         try {
@@ -89,7 +89,7 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
 
     @Override
     public QRVo getQR() {
-        JSONObject jsonObject = requestsUtils.get("https://passport.bilibili.com/x/passport-login/web/qrcode/generate", null, null);
+        JSONObject jsonObject = requestUtils.get("https://passport.bilibili.com/x/passport-login/web/qrcode/generate", null, null);
         // url返回给前端生成二维码
         String url = jsonObject.getJSONObject("data").getString("url");
         // qrcode_key获取refresh_token时使用
@@ -99,7 +99,7 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
 
     @Override
     public String loginByCheckQr(String qrcode_key) {
-        JSONObject jsonObject1 = requestsUtils.getAndGetHeader("https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=" + qrcode_key, null, null);
+        JSONObject jsonObject1 = requestUtils.getAndGetHeader("https://passport.bilibili.com/x/passport-login/web/qrcode/poll?qrcode_key=" + qrcode_key, null, null);
         if (jsonObject1.getJSONObject("data").getString("code").equals("0")) {
             log.info("扫码登陆成功 [{}],返回refresh_token", jsonObject1);
             String totalCookie = getCookieFromRespHeader(jsonObject1);
@@ -129,7 +129,7 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
         HashMap<String, String> header = new HashMap<>();
         header.put("Cookie", biliDataEntityByUserId.getCookie());
         BiliUserDataVo biliUserData = new BiliUserDataVo(biliDataEntityByUserId);
-        String refreshCsrf = getRefreshCsrf(requestsUtils.getForHtml("https://www.bilibili.com/correspond/1/" + new RSAKotlinUtils().getCorrespondPath(), null, header));
+        String refreshCsrf = getRefreshCsrf(requestUtils.getForHtml("https://www.bilibili.com/correspond/1/" + new RSAKotlinUtils().getCorrespondPath(), null, header));
         if (refreshCsrf.isEmpty()) {
             throw new GlobalException("获取refreshCsrf失败");
         }
@@ -137,7 +137,7 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
                 + "&refresh_csrf=" + refreshCsrf
                 + "&source=" + "main_web"
                 + "&refresh_token=" + biliUserData.getRefreshToken();
-        JSONObject post = requestsUtils.postWithHeader("https://passport.bilibili.com/x/passport-login/web/cookie/refresh?" + requestBody, null, header);
+        JSONObject post = requestUtils.postWithHeader("https://passport.bilibili.com/x/passport-login/web/cookie/refresh?" + requestBody, null, header);
         log.info("Cookie刷新结果[{}]", post);
         String newRefreshToken = post.getJSONObject("data").getString("refresh_token");
         String newCookie = getCookieFromRespHeader(post);
@@ -147,7 +147,7 @@ public class BiliServiceImpl extends ServiceImpl<BiliDataMapper, BiliDataEntity>
     private JSONObject getWithCookie(String url, String totalCookie) {
         HashMap<String, String> header = new HashMap<>();
         header.put("Cookie", totalCookie);
-        return requestsUtils.get(url, null, header);
+        return requestUtils.get(url, null, header);
     }
 
     private String getCookieFromRespHeader(JSONObject jsonObject1) {

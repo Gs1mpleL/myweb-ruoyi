@@ -34,3 +34,6 @@ INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, 
 INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, access_time) VALUES (16, 'wanfeng', '127.0.0.1', '0', '登录成功', '2024-05-07 01:35:35');
 INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, access_time) VALUES (17, 'wanfeng', '127.0.0.1', '0', '退出成功', '2024-05-07 01:36:25');
 INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, access_time) VALUES (18, 'admin', '127.0.0.1', '0', '登录成功', '2024-05-07 09:20:00');
+INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, access_time) VALUES (19, 'admin', '127.0.0.1', '0', '登录成功', '2024-05-08 22:21:51');
+INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, access_time) VALUES (20, 'admin', '127.0.0.1', '0', '登录成功', '2024-05-10 22:59:23');
+INSERT INTO `ry-cloud`.sys_logininfor (info_id, user_name, ipaddr, status, msg, access_time) VALUES (21, 'admin', '127.0.0.1', '0', '登录成功', '2024-05-16 09:07:11');

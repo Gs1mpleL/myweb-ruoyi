@@ -2,7 +2,6 @@ package com.ruoyi.system.api.factory;
 
 import com.ruoyi.common.core.domain.R;
 import com.ruoyi.system.api.RemoteUserService;
-import com.ruoyi.system.api.domain.SysPushConfig;
 import com.ruoyi.system.api.domain.SysUser;
 import com.ruoyi.system.api.model.LoginUser;
 import org.slf4j.Logger;
@@ -31,11 +30,6 @@ public class RemoteUserFallbackFactory implements FallbackFactory<RemoteUserServ
             @Override
             public R<Boolean> registerUserInfo(SysUser sysUser, String source) {
                 return R.fail("注册用户失败:" + throwable.getMessage());
-            }
-
-            @Override
-            public R<SysPushConfig> getPushConfigByType(String type, String source) {
-                return R.fail("获取推送配置失败:" + throwable.getMessage());
             }
         };
     }

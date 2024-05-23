@@ -785,7 +785,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
-    jdbc-type-for-null: ''null''
+    jdbc-type-for-null: \'null\'
 
 # swagger配置
 swagger:
@@ -830,7 +830,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
-    jdbc-type-for-null: ''null''
+    jdbc-type-for-null: \'null\'
 
 
 # swagger配置
@@ -919,7 +919,7 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
-    jdbc-type-for-null: ''null''
+    jdbc-type-for-null: \'null\'
 
 # swagger配置
 swagger:

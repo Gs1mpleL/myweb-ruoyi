@@ -1,4 +1,4 @@
-package com.ruoyi.crawler.domain.vo;
+package com.ruoyi.system.domain.vo;
 
 import lombok.Data;
 
@@ -6,6 +6,6 @@ import lombok.Data;
 public class PushVo {
     private Long id;
     private Long userId;
-    private String token;
     private String type;
+    private String token;
 }

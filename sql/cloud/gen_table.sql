@@ -25,4 +25,4 @@ create table gen_table
 )
     comment '代码生成业务表';
 
-INSERT INTO `ry-cloud`.gen_table (table_id, table_name, table_comment, sub_table_name, sub_table_fk_name, class_name, tpl_category, tpl_web_type, package_name, module_name, business_name, function_name, function_author, gen_type, gen_path, options, create_by, create_time, update_by, update_time, remark) VALUES (2, 'sys_user_push_prop', '', null, null, 'SysUserPushProp', 'crud', '', 'com.ruoyi.system', 'system', 'prop', null, 'ruoyi', '0', '/', null, 'admin', '2024-05-07 09:32:42', '', null, null);
+INSERT INTO `ry-cloud`.gen_table (table_id, table_name, table_comment, sub_table_name, sub_table_fk_name, class_name, tpl_category, tpl_web_type, package_name, module_name, business_name, function_name, function_author, gen_type, gen_path, options, create_by, create_time, update_by, update_time, remark) VALUES (3, 'sys_push_config', '推送服务类型', null, null, 'SysPushConfig', 'crud', 'element-ui', 'com.ruoyi.system', 'system', 'pushConfig', '推送服务', 'ruoyi', '0', '/', '{"parentMenuId":"1"}', 'admin', '2024-05-08 22:24:35', '', '2024-05-08 22:47:16', null);

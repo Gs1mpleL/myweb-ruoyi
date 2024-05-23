@@ -2,7 +2,7 @@ package com.ruoyi.system.mapper;
 
 import java.util.List;
 
-import com.ruoyi.system.api.domain.SysPushConfig;
+import com.ruoyi.system.domain.SysPushConfig;
 
 /**
  * 推送服务Mapper接口
